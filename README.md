@@ -22,7 +22,7 @@ You should name your program `arma.py`. It should be called as follows:
 
 `python arma.py input_filename output_filename min_support_percentage min_confidence`
 
-(or just 'python' if python version 3 is your default python setup)
+(or just `python` if python version 3 is your default python setup)
 
 where:
 * `input_filename` is the name of the file that contains market basket data that is the input to your program. The format for the input file is provided below. A sample file `input.txt` is provided together with this repository.  
