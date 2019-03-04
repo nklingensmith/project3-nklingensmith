@@ -16,11 +16,11 @@ The goal of this assignment is for you to gain familiarity with association rule
 
 ---
 
-### What to do -- apriori.py
-In this assignment you are asked to implement a simplified version of the A-Priori association rule mining algorithm, in Python.
-You should name your program `apriori.py`. It should be called as follows:
+### What to do -- arma.py
+In this assignment you are asked to implement a simplified version of the A-Priori **a**ssociation **r**ule **m**ining **a**lgorithm, in Python.
+You should name your program `arma.py`. It should be called as follows:
 
-`python apriori.py input_filename output_filename min_support_percentage min_confidence`
+`python arma.py input_filename output_filename min_support_percentage min_confidence`
 
 where:
 * `input_filename` is the name of the file that contains market basket data that is the input to your program. The format for the input file is provided below. A sample file `input.txt` is provided together with this repository.  
@@ -82,7 +82,7 @@ R, 0.1500, 0.5000, A105, ’=>’, A100, A207
 * `min_confidence` is the minimum confidence for an association rule to be significant, e.g., 50%. This should be provided as a floating point number (out of 1), e.g., 0.05, 0.4, 0.5 are used to denote 5%, 40%, and 50% respectively. You should not include a percent symbol.  
 
 An example call to your program could be as follows:  
-`python apriori.py input.csv output.csv 0.4 0.7`
+`python arma.py input.csv output.csv 0.4 0.7`
 
 ---
 
@@ -116,7 +116,7 @@ and compute their support and confidence. Note that the support of all these rul
 ### Important notes about grading
 It is absolutely imperative that your python program:  
 * runs without any syntax or other errors (using Python 2.7) -- we will run it using the following command:  
-`python apriori.py ...`  
+`python arma.py ...`  
 * strictly adheres to the format specifications for input and output, as explained above.     
 
 Failure in any of the above will result in **severe** point loss. 
@@ -142,7 +142,7 @@ If you would like to use any other libraries, you must ask permission by Thursda
 ---
 
 ### How to submit your assignment
-For this assignment, you must use the repository that was created for you after visiting the classroom link. You need to update the repository to include file `apriori.py` as described above, and other files that are needed for running your program. You need to make sure to commit your code to the repository provided. We will clone all repositories shortly after midnight:  
+For this assignment, you must use the repository that was created for you after visiting the classroom link. You need to update the repository to include file `arma.py` as described above, and other files that are needed for running your program. You need to make sure to commit your code to the repository provided. We will clone all repositories shortly after midnight:  
 * the day of the deadline **Sunday, October 9th, 2016 (i.e., at 12:15am, Monday, October 10, 2016)**  
 * 24 hours later (for submissions that are one day late / -5 points), and  
 * 48 hours after the first deadline (for submissions that are two days late / -15 points). 
