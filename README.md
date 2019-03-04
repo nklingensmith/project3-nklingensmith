@@ -29,9 +29,9 @@ where:
 `transaction_id, item_1, item_2, item_3, ...`   
 > for example: 
 ```
-1, 15, 20, 24  
-2, 1, 5  
-3, 1, 15, 20  
+1, A100, A105, A207  
+2, A207  
+3, A100, A105  
 ```
 > Notes:  
 > * Item names could consist of either numbers (0-9) or characters (a-zA-z) or combinations of numbers and characters. No spaces or puncuation characters are allowed in item names.   
