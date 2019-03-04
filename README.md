@@ -79,7 +79,8 @@ R, 0.1500, 0.5000, A105, ’=>’, A100, A207
 * `min_confidence` is the minimum confidence for an association rule to be significant, e.g., 50%. This should be provided as a floating point number (out of 1), e.g., 0.05, 0.4, 0.5 are used to denote 5%, 40%, and 50% respectively. You should not include a percent symbol.  
 
 An example call to your program could be as follows:  
-`python arma.py input.csv output.csv 0.4 0.7`
+`python3 arma.py input.csv output.csv 0.4 0.7`
+(or just 'python' if python version 3 is your default python setup)
 
 ---
 
