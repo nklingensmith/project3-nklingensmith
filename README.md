@@ -46,10 +46,9 @@ where:
 > to denote that this is a frequent item**s**et or:  
 `R, support_percentage, confidence, item_4, item_5, ..., ’=>’, item_6, item_7, ...  `  
 > to denote that this is an association **r**ule. The keys "S" and "R" are verbatim and no other substitution is needed. 
-
 > It should be noted that the items listed in the frequent itemset case (item 1, item 2, item 3, ...) should be in lexicographic order, the items listed to the left of the => sign in the association rule case (item 4, item 5, ...) should be in lexicographic order and so should the items listed in the right size of the => sign in the association rule case (item 6, item 7, ...).  
-> The `support_percentage` should be the support percentage (expressed as a floating number between 0 and 1 with 4 decimal points) for the specific frequent itemset or the specific associate rule (and both should be above the user-specified min_support_percentage).  
-> The `confidence` should be the confidence (expressed as a floating number between 0 and 1 with 4 decimal points) for the specific association rule (and should be above the user-specified min confidence).  
+> The `support_percentage` should be the support percentage (expressed as a floating number between 0 and 1 with 4 decimal points) for the specific frequent itemset or for the specific association rule (and both should be above the user-specified min_support_percentage).  
+> The `confidence` should be the confidence percentage (expressed as a floating number between 0 and 1 with 4 decimal points) for the specific association rule (and should be above the user-specified min_confidence).  
 > You should list in the output file all the frequent itemsets that you discover in the input file (S) and all the association rules that you can generate using the A-Priori method (R), that satisfy the min support percentage and min confidence requirements.  
 >
 > Here’s an example output file:
@@ -63,16 +62,14 @@ R, 0.1500, 0.5000, A105, ’=>’, A100, A207
 ```
 
 > Important Note: You should print 4 decimal points for all floating point numbers (e.g., use %.4f in your print statement). 
-
 > Note: Your program may print additional messages; these will not be considered. You are encouraged to use this mechanism for debugging or progress reporting purposes. Only the results contained in the output file, in the specified format, will be considered.  
-
 > The repository contains three output files as follows:  
 
 | Input Filename | Output Filename | Minimum Support Percentage | Minimum Confidence |  
 | --- | --- | --- | ---  |  
-| input.csv | output.sup=0.4,conf=0.7.csv | 0.4 | 0.7 |  
-| input.csv | output.sup=0.4,conf=0.8.csv | 0.4 | 0.8 |  
 | input.csv | output.sup=0.5,conf=0.7.csv | 0.5 | 0.7 |  
+| input.csv | output.sup=0.5,conf=0.8.csv | 0.5 | 0.8 |  
+| input.csv | output.sup=0.6,conf=0.8.csv | 0.6 | 0.8 |  
 
 
 
@@ -81,7 +78,7 @@ R, 0.1500, 0.5000, A105, ’=>’, A100, A207
 * `min_confidence` is the minimum confidence for an association rule to be significant, e.g., 50%. This should be provided as a floating point number (out of 1), e.g., 0.05, 0.4, 0.5 are used to denote 5%, 40%, and 50% respectively. You should not include a percent symbol.  
 
 An example call to your program could be as follows:  
-`python3 arma.py input.csv output.csv 0.4 0.7`
+`python3 arma.py input.csv output.csv 0.5 0.7`
 
 ---
 
@@ -114,8 +111,8 @@ and compute their support and confidence. Note that the support of all these rul
 
 ### Important notes about grading
 It is absolutely imperative that your python program:  
-* runs without any syntax or other errors (using Python 2.7) -- we will run it using the following command:  
-`python arma.py ...`  
+* runs without any syntax or other errors (using Python 3) -- we will run it using the following command:  
+`python3 arma.py ...`  
 * strictly adheres to the format specifications for input and output, as explained above.     
 
 Failure in any of the above will result in **severe** point loss. 
@@ -133,24 +130,25 @@ math
 os
 pandas
 re
+requests
 string
 sys
 ```
-If you would like to use any other libraries, you must ask permission by Thursday, September 29, 2016, using [piazza](http://piazza.cs1656.org).
+If you would like to use any other libraries, you must ask permission by Friday, March 8, 2019, using [piazza](http://piazza.cs1656.org).
 
 ---
 
 ### How to submit your assignment
-For this assignment, you must use the repository that was created for you after visiting the classroom link. You need to update the repository to include file `arma.py` as described above, and other files that are needed for running your program. You need to make sure to commit your code to the repository provided. We will clone all repositories shortly after midnight:  
-* the day of the deadline **Sunday, October 9th, 2016 (i.e., at 12:15am, Monday, October 10, 2016)**  
+For this assignment, you must use the repository that was created for you after visiting the classroom link. You need to create the file `arma.py` as described above, and add other files that are needed for running your program. You need to make sure to commit your code to the repository provided. We will clone all repositories shortly after midnight:  
+* the day of the deadline **Sunday, March 24, 2019**  (i.e., 0:15am, Monday, March 25, 2019)
 * 24 hours later (for submissions that are one day late / -5 points), and  
 * 48 hours after the first deadline (for submissions that are two days late / -15 points). 
 
-Our assumption is that everybody will submit on the first deadline. If you want us to consider a late submission, you need to email us at `cs1656-staff@cs.pitt.edu`
+Our assumption is that everybody will submit on the first deadline. If you want us to grade a late submission, you need to email us at `cs1656-staff@cs.pitt.edu`
 
 
 ### About your github account
 It is very important that:  
 * Your github account can do **private** repositories. If this is not already enabled, you can do it by visiting <https://education.github.com/>  
 * You use the same github account for the duration of the course.  
-* You use the github account that you specified during the test assignment.    
+* You use the github account that you specified on tophat.    
