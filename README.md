@@ -36,9 +36,6 @@ where:
 > Notes:  
 > * Item names could consist of either numbers (0-9) or characters (a-zA-z) or combinations of numbers and characters. No spaces or puncuation characters are allowed in item names.   
 > * The CSV files may or may not contain whitespace between values.
->
-> Here are some links with additional market basket data that you can use to experiment:  
-> * [https://wiki.csc.calpoly.edu/datasets/wiki/apriori](https://wiki.csc.calpoly.edu/datasets/wiki/apriori) (the first file format corresponds to the correct format for this assignment, i.e., XXXX-out1.csv)
 
 * `output_filename` is the name of the file that will store the required output of your program. The file should contain the frequent item sets and the association rules that you discovered after processing the submitted input data. The required format for the output file is provided below. Sample output files (matching the input file provided) are provided together with this repository. 
 
