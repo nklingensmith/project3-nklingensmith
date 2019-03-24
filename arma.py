@@ -16,17 +16,17 @@ def combiner(item1, item2, itemsnum):
                 combarr.append(k)
         combarr.sort()
         return tuple(combarr)
-def check_support(assdict, item, itemsnum):
+def check_support(assocdict, item, itemsnum):
     support = 0
     if itemsnum == 1:
-        for k in assdict:
-            if item in assdict[k]:
+        for k in assocdict:
+            if item in assocdict[k]:
                 support += 1
     else:
-        for k in assdict:
+        for k in assocdict:
             bothin = True
             for itemi in item:
-                bothin = bothin and itemi in assdict[k]
+                bothin = bothin and itemi in assocdict[k]
             if bothin:
                 support += 1
 
@@ -39,7 +39,7 @@ parser.add_argument('min_support_percentage', type=float)
 parser.add_argument('min_confidence', type=float)
 
 args = parser.parse_args()
-assdict = {}
+assocdict = {}
 basesets = []
 validsets = {}
 conf = {}
@@ -48,19 +48,19 @@ numitems = 0
 with open(args.input_filename) as csvfile:
     reader = csv.reader(csvfile, delimiter=',', skipinitialspace=True)
     for row in reader:
-       assdict[row[0]] = row[1:]
+       assocdict[row[0]] = row[1:]
        totaltransactions += 1
 
-#for k in assdict:
-#    for i in range(len(assdict[k])):
+#for k in assocdict:
+#    for i in range(len(assocdict[k])):
 #        if i == 0:
 #            continue
-#        for comb in itertools.combinations(assdict[k],i):
+#        for comb in itertools.combinations(assocdict[k],i):
 #            itemsets.add(comb)
 #
 #print(itemsets)
-for k in assdict:
-    for v in assdict[k]:
+for k in assocdict:
+    for v in assocdict[k]:
         if v not in basesets:
             basesets.append(v)
 numitems = len(basesets)
@@ -68,7 +68,7 @@ basesets.sort()
 validsets[1] = {}
 
 for i in range(numitems):
-    support = check_support(assdict, basesets[i], 1)
+    support = check_support(assocdict, basesets[i], 1)
     if support / totaltransactions >= args.min_support_percentage:
         validsets[1][basesets[i]] = support
 
@@ -84,7 +84,7 @@ for i in range(numitems):
                 continue
             neword = combiner(vj, vk, i-1)
             if len(neword) != i: continue
-            support = check_support(assdict, neword, i)
+            support = check_support(assocdict, neword, i)
             if support / totaltransactions >= args.min_support_percentage:
                 validsets[i][neword] = support
             k += 1
